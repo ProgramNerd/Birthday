@@ -1,0 +1,24 @@
+//CODE FOR BIRTHDAY
+import java.util.Scanner;
+import java.util.Calendar;
+
+public class Birthday3{
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("Enter your Birth Year");
+    int birthyear = keyboard.nextInt();
+    System.out.println("Enter your Birth Month");
+    int birthmonth = keyboard.nextInt();
+    System.out.println("Enter your Birth Day");
+    int birthdate = keyboard.nextInt();
+    Calendar now = Calendar.getInstance();
+    int yearAge = (now.get(Calendar.YEAR)) - birthyear;
+    int monthAge = (now.get(Calendar.MONTH)) - birthmonth;
+    int dayAge = (now.get(Calendar.DATE)) - birthdate;
+    if(monthAge < 0){
+      yearAge --;
+      monthAge += 12;
+    }
+    System.out.println(yearAge + " years, " + monthAge + " months, " + dayAge + " days old.");
+ }
+}
